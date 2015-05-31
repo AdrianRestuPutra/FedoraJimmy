@@ -3,6 +3,7 @@ using System.Collections;
 
 public class ColorAreaScript : MonoBehaviour {
 	public Color color;
+	public string colorCode;
 
 	// Use this for initialization
 	void Start () {
@@ -15,9 +16,8 @@ public class ColorAreaScript : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D (Collider2D collider) {
-		print("collide");
 		if (collider.gameObject.tag == "Player") {
-			collider.gameObject.GetComponent<ChangeColorScript>().changePlayerColor(color);
+			collider.gameObject.GetComponent<ChangeColorScript>().changePlayerColor(color, colorCode);
 		}
 	}
 }
